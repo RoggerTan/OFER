@@ -33,7 +33,7 @@ from skimage.io import imread
 from PIL import Image
 from torch.utils.data import Dataset
 from torchvision import transforms as T
-from src.models.flame import FLAME
+from ofer.src.models.flame import FLAME
 
 
 class BaseDatasetFlame23(Dataset, ABC):

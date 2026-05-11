@@ -21,10 +21,10 @@ import sys
 import torch
 import torch.nn.functional as F
 
-from src.models.arcface import Arcface
-from src.models.base_model import BaseModel
-from src.models.network.flameparamdiffusion_network import FlameParamDiffusion, VarianceScheduleMLP
-from src.models.network.flameAttnNetwork import Unet 
+from ofer.src.models.arcface import Arcface
+from ofer.src.models.base_model import BaseModel
+from ofer.src.models.network.flameparamdiffusion_network import FlameParamDiffusion, VarianceScheduleMLP
+from ofer.src.models.network.flameAttnNetwork import Unet 
 
 from loguru import logger
 import numpy as np

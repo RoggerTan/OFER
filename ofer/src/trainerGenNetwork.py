@@ -27,8 +27,8 @@ from tqdm import tqdm
 from pytorch_lightning import seed_everything
 
 import src.datasets as datasets
-from src.configs.config import cfg
-from src.utils import util
+from ofer.src.configs.config import cfg
+from ofer.src.utils import util
 import trimesh
 import shutil
 

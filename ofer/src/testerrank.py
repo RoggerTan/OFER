@@ -34,9 +34,9 @@ from skimage.io import imread
 from skimage.transform import estimate_transform, warp
 from tqdm import tqdm
 
-from src.configs.config import cfg
-from src.utils import util
-from src.models.flame import FLAME
+from ofer.src.configs.config import cfg
+from ofer.src.utils import util
+from ofer.src.models.flame import FLAME
 import trimesh
 
 

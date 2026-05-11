@@ -24,7 +24,7 @@ import torch.backends.cudnn as cudnn
 import torch.distributed as dist
 import yaml
 from loguru import logger
-from src.utils import util
+from ofer.src.utils import util
 
 
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '.')))
@@ -47,7 +47,7 @@ def deterministic(rank):
     cudnn.benchmark = False
 
 def trainGenNetwork(rank, world_size, cfg):
-    from src.trainerGenNetwork import TrainerFlame
+    from ofer.src.trainerGenNetwork import TrainerFlame
     port = np.random.randint(low=0, high=2000)
     setup(rank, world_size, 12310 + port)
 
@@ -74,7 +74,7 @@ def trainExpGen(rank, world_size, cfg):
     trainGenNetwork(rank, world_size, cfg)
 
 def trainIdRank(rank, world_size, cfg):
-    from src.trainerIdRank import TrainerIdRank
+    from ofer.src.trainerIdRank import TrainerIdRank
     port = np.random.randint(low=0, high=2000)
     setup(rank, world_size, 12310 + port)
 

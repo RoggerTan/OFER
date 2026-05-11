@@ -20,7 +20,7 @@ import numpy as np
 import torch
 import torch.nn as nn
 import sys
-from src.configs.config import cfg
+from ofer.src.configs.config import cfg
 from .flame import FLAME
 
 

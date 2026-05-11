@@ -12,7 +12,7 @@ from jobs import trainIdRank
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '.')))
 
 if __name__ == '__main__':
-    from src.configs.config import parse_args
+    from ofer.src.configs.config import parse_args
 
     cfg, args = parse_args()
 

@@ -19,10 +19,10 @@ import sys
 import torch
 import torch.nn.functional as F
 
-from src.models.arcface import Arcface
-from src.models.base_model import BaseModel
-from src.models.baselinemodels.flameparamdiffusion_model import FlameParamDiffusionModel
-from src.models.network.rank_network import RankMLPNet
+from ofer.src.models.arcface import Arcface
+from ofer.src.models.base_model import BaseModel
+from ofer.src.models.baselinemodels.flameparamdiffusion_model import FlameParamDiffusionModel
+from ofer.src.models.network.rank_network import RankMLPNet
 from loguru import logger
 import numpy as np
 

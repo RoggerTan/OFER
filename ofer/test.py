@@ -9,11 +9,11 @@ import numpy as np
 import random
 from pytorch_lightning import seed_everything
 
-from src.test import Tester
-from src.testerrank import Tester as TesterRank
+from ofer.src.test import Tester
+from ofer.src.testerrank import Tester as TesterRank
 
-from src.models.baselinemodels.flameparamdiffusion_model import FlameParamDiffusionModel
-from src.models.baselinemodels.flameparamrank_model import FlameParamRankModel
+from ofer.src.models.baselinemodels.flameparamdiffusion_model import FlameParamDiffusionModel
+from ofer.src.models.baselinemodels.flameparamrank_model import FlameParamRankModel
 
 def random_seed(seed_value):
     random.seed(seed_value)
@@ -27,8 +27,8 @@ def random_seed(seed_value):
         cudnn.benchmark = False
 
 if __name__ == '__main__':
-    from src.configs.config import get_cfg_defaults, update_cfg
-    from src.configs.config import parse_args
+    from ofer.src.configs.config import get_cfg_defaults, update_cfg
+    from ofer.src.configs.config import parse_args
     deviceid = torch.cuda.current_device()
     torch.cuda.empty_cache()
     num_gpus = torch.cuda.device_count()

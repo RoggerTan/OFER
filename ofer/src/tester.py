@@ -35,17 +35,17 @@ from skimage.io import imread
 from skimage.transform import estimate_transform, warp
 from tqdm import tqdm
 
-from src.configs.config import cfg
-from src.utils import util
-from src.models.flame import FLAME
+from ofer.src.configs.config import cfg
+from ofer.src.utils import util
+from ofer.src.models.flame import FLAME
 import trimesh
 import scipy.io
 
 
 
-from src.models.deca import DECA
-from src.configs.deca_config import cfg as deca_cfg
-from src.utils.utils import batch_orth_proj
+from ofer.src.models.deca import DECA
+from ofer.src.configs.deca_config import cfg as deca_cfg
+from ofer.src.utils.utils import batch_orth_proj
 
 sys.path.append("./src")
 input_mean = 127.5

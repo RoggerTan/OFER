@@ -30,8 +30,8 @@ from torch.utils.data import DataLoader
 from tqdm import tqdm
 
 import src.datasets as datasets
-from src.configs.config import cfg
-from src.utils import util
+from ofer.src.configs.config import cfg
+from ofer.src.utils import util
 import trimesh
 import shutil
 
