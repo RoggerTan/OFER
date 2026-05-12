@@ -220,6 +220,7 @@ class FlameParamDiffusionModel(BaseModel):
         elif self.expencoder == 'arcfarl':
             codedict['arcface'] = F.normalize(self.arcface(arcface_imgs))
             codedict['farl'] = self.farlmodel.encode_image(farl_images).to(self.device)
+            codedict['arcfarl'] = torch.cat((codedict['farl'], codedict['arcface']), dim=1)
         elif self.expencoder == 'farl':
             codedict['farl'] = self.farlmodel.encode_image(farl_images).to(self.device)
         elif self.expencoder == 'clip':
@@ -244,8 +245,6 @@ class FlameParamDiffusionModel(BaseModel):
         pred_flameparam = None
 
         identity_code = codedict[self.expencoder]
-        if self.expencoder == 'arcfarl':
-            identity_code = torch.cat((codedict['farl'], codedict['arcface']), dim=1)
         batch_size = identity_code.shape[0]
 
         if (not self.validation) and (not self.testing):
@@ -339,4 +338,3 @@ class FlameParamDiffusionModel(BaseModel):
         losses['pred_mesh_diff'] = torch.mean(mesh_loss)*1e2
 
         return losses
-
