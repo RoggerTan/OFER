@@ -183,7 +183,6 @@ class ResnetBlock(nn.Module):
 
     def forward(self, x, time_emb = None, ctx_emb = None):
         scale_shift = None
-        print(ctx_emb.shape, flush=True)
         all_emb = torch.cat([time_emb, ctx_emb], dim=1)
         if exists(self.mlp) and exists(all_emb):
             all_emb = self.mlp(all_emb)
