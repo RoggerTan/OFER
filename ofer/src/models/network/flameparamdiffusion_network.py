@@ -327,7 +327,7 @@ class FlameParamDiffusion(Module):
             flameparam_xt = traj[t]
             
             batch_t = ([t]*batch_size)
-            print('DEBUG', flameparam_xt.shape, len(batch_t))
+            print('DEBUG', flameparam_xt.shape, len(batch_t), context.shape)
             pred_theta, pred_flameparam_x0 = self.get_network_prediction(flameparam_xt, batch_t, context, getmeshx0=True, issampling=True, varsched=varsched)
             # When we use diffusion directly from data and not the noise
             if sampling == 'ddim1':
