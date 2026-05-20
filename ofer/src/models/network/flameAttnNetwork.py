@@ -159,9 +159,7 @@ class Block(nn.Module):
 
     def forward(self, x, scale_shift = None):
         x = self.proj(x)
-        print('DEBUG0', x.shape)
         x = self.norm(x)
-        print('DEBUG1', x.shape)
         if exists(scale_shift):
             scale, shift = scale_shift
             x = x * (scale + 1) + shift
