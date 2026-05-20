@@ -435,6 +435,7 @@ class Unet(nn.Module):
 
         if self.numattn == 1:
             for block1, block2, attn, downsample in self.downs:
+                print('DEBUG2', x.shape)
                 x = block1(x, t, context)
                 h.append(x)
                 x = block2(x, t, context)
