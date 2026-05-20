@@ -445,8 +445,7 @@ class Unet(nn.Module):
             x = self.mid_attn(x)
             x = self.mid_block2(x, t, context)
             for upsample, block1, block2, attn in self.ups:
-                print('DEBUG', x.shape)
-                x = x.squeeze()
+                x = x.squeeze(2)
                 x = upsample(x)
                 x = x.unsqueeze(-1)
                 x = torch.cat((x, h.pop()), dim = 1)
@@ -463,7 +462,7 @@ class Unet(nn.Module):
                 x = attn2(x)
                 x = attn3(x)
                 h.append(x)
-                x = x.squeeze()
+                x = x.squeeze(2)
                 x = downsample(x)
                 x = x.unsqueeze(-1)
             x = self.mid_block1(x, t, context)
@@ -472,7 +471,7 @@ class Unet(nn.Module):
             x = self.mid_attn3(x)
             x = self.mid_block2(x, t, context)
             for upsample, block1, block2, attn1, attn2, attn3 in self.ups:
-                x = x.squeeze()
+                x = x.squeeze(2)
                 x = upsample(x)
                 x = x.unsqueeze(-1)
                 x = torch.cat((x, h.pop()), dim = 1)
