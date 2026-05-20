@@ -438,6 +438,7 @@ class Unet(nn.Module):
                 x = block2(x, t, context)
                 x = attn(x)
                 h.append(x)
+                print('DEBUG1', x.shape)
                 x = x.squeeze()
                 print('DEBUG2', x.shape)
                 x = downsample(x)
