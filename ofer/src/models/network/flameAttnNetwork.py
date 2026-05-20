@@ -433,13 +433,13 @@ class Unet(nn.Module):
 
         if self.numattn == 1:
             for block1, block2, attn, downsample in self.downs:
-                print('DEBUG2', x.shape)
                 x = block1(x, t, context)
                 h.append(x)
                 x = block2(x, t, context)
                 x = attn(x)
                 h.append(x)
                 x = x.squeeze()
+                print('DEBUG2', x.shape)
                 x = downsample(x)
                 x = x.unsqueeze(-1)
             x = self.mid_block1(x, t, context)
