@@ -445,6 +445,7 @@ class Unet(nn.Module):
             x = self.mid_attn(x)
             x = self.mid_block2(x, t, context)
             for upsample, block1, block2, attn in self.ups:
+                print('DEBUG', x.shape)
                 x = x.squeeze()
                 x = upsample(x)
                 x = x.unsqueeze(-1)
