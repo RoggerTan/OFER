@@ -5,7 +5,7 @@ from yacs.config import CfgNode as CN
 
 cfg = CN()
 
-cfg.root_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), '../../'))
+cfg.root_dir = os.getcwd()
 cfg.dir_name = 'OFER'
 cfg.device = 'cuda'
 cfg.seed = 42
